@@ -22,7 +22,7 @@ def theta_range_calc(theta_min, theta_max, theta_step):
     return theta_range
 
 
-def cluster_vectors(f_name, theta_min, theta_max, theta_step, out_file, q=-1, delimiter=",", precision=2):
+def cluster_vectors(f_name, theta_min, theta_max, theta_step, q=-1, out_file, delimiter=",", precision=2):
 
     data = load_data(f_name=f_name, delimiter=delimiter)
     theta_range = theta_range_calc(theta_min=theta_min, theta_max=theta_max, theta_step=theta_step)
