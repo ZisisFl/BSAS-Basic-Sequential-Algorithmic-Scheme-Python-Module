@@ -36,4 +36,5 @@ if he wants to stop the algorithm when it reaches a certain amount q of clusters
 the name of the output file its delimeter with comma as preselected and the precision of the theta_value 
 to output.
 
-`Reference <http://users.utcluj.ro/~ancac/Resurse/labPRS/L13_Clustering/lab_13e_clustering.pdf>`Sergios Theodoridis,Konstantinos Koutroumpas: Pattern Recognition
+[Reference](<http://users.utcluj.ro/~ancac/Resurse/labPRS/L13_Clustering/lab_13e_clustering.pdf>) 
+Sergios Theodoridis,Konstantinos Koutroumpas: Pattern Recognition
