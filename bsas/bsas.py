@@ -4,8 +4,8 @@ mC = []  # List of representative vectors
 results = []  # List of number of clusters per iteration
 
 
-def load_data(f_name, delimiter=','):
-    data = np.genfromtxt(f_name+'.csv', delimiter=delimiter)  # Initialize array with data
+def load_data(f_name, destination='',  delimiter=','):
+    data = np.genfromtxt(destination+f_name+'.csv', delimiter=delimiter)  # Initialize array with data
     np.random.shuffle(data)  # Shuffle data
     return data
 
@@ -22,9 +22,9 @@ def theta_range_calc(theta_min, theta_max, theta_step):
     return theta_range
 
 
-def cluster_vectors(f_name, theta_min, theta_max, theta_step, q=-1, out_file, delimiter=",", precision=2):
+def cluster_vectors(f_name, theta_min, theta_max, theta_step, out_file, destination='',  delimiter=',', q=-1, precision=2):
 
-    data = load_data(f_name=f_name, delimiter=delimiter)
+    data = load_data(destination=destination, f_name=f_name, delimiter=delimiter)
     theta_range = theta_range_calc(theta_min=theta_min, theta_max=theta_max, theta_step=theta_step)
 
     n = data.shape[0]  # Number of vectors to cluster
@@ -53,4 +53,4 @@ def cluster_vectors(f_name, theta_min, theta_max, theta_step, q=-1, out_file, de
 
         results.append(m)  # Add number of clusters for the current iteration
     output = np.column_stack((theta_range, results))
-    np.savetxt(out_file+".csv", output, delimiter=delimiter, fmt='%.'+str(precision)+'f')
+    np.savetxt(destination+out_file+".csv", output, delimiter=delimiter, fmt='%.'+str(precision)+'f')
